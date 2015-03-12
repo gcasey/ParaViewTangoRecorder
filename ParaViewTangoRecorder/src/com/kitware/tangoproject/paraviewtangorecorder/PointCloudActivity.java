@@ -732,6 +732,13 @@ public class PointCloudActivity extends Activity implements OnClickListener {
 
             out.write(("\nFIELD FieldData 1\n" + "timestamp 1 1 float\n").getBytes());
             out.writeFloat((float) xyzIj.timestamp);
+            out.write("\n");
+
+            out.write(("POINT_DATA " + String.valueOf(xyzIj.xyzCount + "\n").getBytes());
+            out.write("SCALARS ij int 2");
+
+            for (int i = 0; i < xyzIj.xyzCount; i++) {
+            out.writeInt(myBuffer.getFloat(12*i+12)
 
             out.close();
             mNumberOfFilesWritten++;
